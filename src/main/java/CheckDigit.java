@@ -38,7 +38,7 @@ public class CheckDigit {
    *  numWithCheckDigit >= 0     
    */     
   public static boolean isValid(int numWithCheckDigit) {
-    return numWithCheckDigit%10 == getCheck(num);
+    return numWithCheckDigit%10 == getCheck(numWithCheckDigit/10);
   }
 
   /** Returns the number of digits in num. */    
