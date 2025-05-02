@@ -4,9 +4,25 @@ public class CheckDigit
    *  Precondition: The number of digits in num is between one and    
    *  six, inclusive.  
    *          num >= 0  
-   */  
+   */ 
+  
    public static int getCheck(int num) 
    {  
+     int nDigits = 0;
+     int j = 7;
+     int sum = 0;
+     ArrayList <Integer> l = new ArrayList<>();
+     while(num>){
+      l.add(0,num%10);
+      num = num/10;
+      nDigits++;
+     }
+     for(int i = 0;i<l.size();i++){
+        l.set(i,l.get(i)*j);
+        j--;
+        num+=l.get(i);
+     }
+     return num%10;
      /* to be implemented in part (a) */
    }
  
@@ -18,7 +34,10 @@ public class CheckDigit
    */     
    public static boolean isValid(int numWithCheckDigit)    
    {      
-     /* to be implemented in part (b) */    
+     /* to be implemented in part (b) */ 
+     if(numWithCheckDigit%10 == getCheck(num)
+        return true;
+     return false;
    }    
    
    /** Returns the number of digits in num. */    
