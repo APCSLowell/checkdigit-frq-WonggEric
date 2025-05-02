@@ -38,17 +38,7 @@ public class CheckDigit {
    *  numWithCheckDigit >= 0     
    */     
   public static boolean isValid(int numWithCheckDigit) {
-    int nDigits = getNumberOfDigits(numWithCheckDigit);
-
-    if (nDigits < 2 || nDigits > 7) {
-      return false;
-    }
-
-    int originalNumber = numWithCheckDigit / 10; // remove last digit
-    int actualCheckDigit = numWithCheckDigit % 10;
-    int expectedCheckDigit = getCheck(originalNumber);
-
-    return actualCheckDigit == expectedCheckDigit;
+    return numWithCheckDigit%10 == getCheck(num);
   }
 
   /** Returns the number of digits in num. */    
