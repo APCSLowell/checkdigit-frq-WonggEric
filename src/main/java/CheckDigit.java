@@ -8,14 +8,13 @@ public class CheckDigit
   
    public static int getCheck(int num) 
    {  
-     int nDigits = 0;
+     int nDigits = getNumberOfDigits(num);
      int j = 7;
      int sum = 0;
      ArrayList <Integer> l = new ArrayList<>();
-     while(num>){
+     while(num>0){
       l.add(0,num%10);
       num = num/10;
-      nDigits++;
      }
      if(nDigits >=1 && nDigits <=6){
        for(int i = 0;i<l.size();i++){
@@ -36,10 +35,14 @@ public class CheckDigit
    */     
    public static boolean isValid(int numWithCheckDigit)    
    {      
+     int nDigits = getNumberOfDigits(num);
      /* to be implemented in part (b) */ 
-     if(numWithCheckDigit%10 == getCheck(num))
-        return true;
-     return false;
+     if(nDigits<2||nDigits>7){
+       return false
+    }
+     
+    return numWithCheckDigit%10 == getCheck(num);
+    
    }    
    
    /** Returns the number of digits in num. */    
