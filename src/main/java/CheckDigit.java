@@ -17,10 +17,12 @@ public class CheckDigit
       num = num/10;
       nDigits++;
      }
-     for(int i = 0;i<l.size();i++){
+     if(nDigits >=1 && nDigits <=6){
+       for(int i = 0;i<l.size();i++){
         l.set(i,l.get(i)*j);
         j--;
         num+=l.get(i);
+       }
      }
      return num%10;
      /* to be implemented in part (a) */
@@ -35,7 +37,7 @@ public class CheckDigit
    public static boolean isValid(int numWithCheckDigit)    
    {      
      /* to be implemented in part (b) */ 
-     if(numWithCheckDigit%10 == getCheck(num)
+     if(numWithCheckDigit%10 == getCheck(num))
         return true;
      return false;
    }    
